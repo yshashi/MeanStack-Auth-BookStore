@@ -1,0 +1,30 @@
+<ng-container *ngIf="book">
+  <div class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
+
+      <img [src]="book.image" alt="card-image" class="object-contain w-full h-72" />
+
+    <div class="p-6">
+      <h5
+        class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+        {{book.title}}
+      </h5>
+      <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+        The place is close to Barceloneta Beach and bus stop just 2 min by walk
+        and near to "Naviglio" where you can enjoy the main night life in
+        Barcelona.
+      </p>
+    </div>
+    <div class="flex justify-between p-6 pt-0">
+      <a [href]="book.url" target="_blank" rel="noopener noreferrer"
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-indigo-500 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+        type="button">
+        More Details
+      </a>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-500 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+        type="button">
+        Add To cart
+      </button>
+    </div>
+  </div>
+</ng-container>

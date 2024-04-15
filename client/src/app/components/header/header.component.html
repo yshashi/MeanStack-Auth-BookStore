@@ -1,0 +1,29 @@
+<nav class="w-full flex justify-between items-center p-5 bg-indigo-500 shadow-lg">
+  <div class="logo">
+    <span class="text-gray-200 text-4xl flex justify-start items-center">BookMYBook</span>
+  </div>
+  <div *ngIf="isLoggedIn" class="search relative">
+    <span class="absolute mt-1.5 mx-3"><i class="fa fa-search font-light" aria-hidden="true"></i></span>
+    <input type="text" placeholder="Search Book"
+      class="w-96 p-2 pl-9 rounded rounded-r-none text-gray-600">
+    <button class="bg-slate-400 p-2 rounded-r text-white outline-none outline-0">Search</button>
+  </div>
+  <div class="nav-items">
+    <ng-container *ngIf="!isLoggedIn">
+      <span routerLink="/login"
+        class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200">Login</span>
+      <span routerLink="/register"
+        class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200">Register</span>
+    </ng-container>
+
+    <ng-container *ngIf="isLoggedIn">
+      <span class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200">Cart</span>
+      <span class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200">Welcome
+        User</span>
+      <span routerLink="/login"
+      (click)="logout()"
+        class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200">Logout</span>
+    </ng-container>
+
+  </div>
+</nav>
